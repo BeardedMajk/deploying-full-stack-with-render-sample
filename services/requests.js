@@ -28,8 +28,9 @@ const getAllActivities = (req, res) => {
 }
 
 const getSingleActivity = (req, res) => {
-  fetch('https://www.boredapi.com/api/activity') // fetch activity from bored API - https://www.boredapi.com/about
-    .then(data => data.json()) // return a promise containing the response
+//  fetch('https://www.boredapi.com/api/activity') // fetch activity from bored API - https://www.boredapi.com/about
+  fetch('https://bored.api.lewagon.com/api/activity') // replaced non-working 'www.boredapi.com' for 'bored.api.lewagon.com'
+     .then(data => data.json()) // return a promise containing the response
     .then(json => res.json(json)) // extract the JSON body content from the response (specifically the activity value) and sends it to the client
     .catch((err) => console.log(err)) // log errors to the console
 }
